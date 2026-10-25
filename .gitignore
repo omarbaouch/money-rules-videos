@@ -1,2 +1,5 @@
 build/
 build_long/
+voice/
+*.wav
+__pycache__/

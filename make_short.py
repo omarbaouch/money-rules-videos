@@ -2,7 +2,7 @@ import json, subprocess, wave, os, sys, math
 from PIL import Image, ImageDraw, ImageFont
 
 S = os.path.dirname(os.path.abspath(__file__))
-VOICE = os.path.join(S, "voice", "en-us-lessac-medium.onnx")
+VOICE = "kokoro:am_michael"  # or a Piper .onnx path; see voice_tts.py
 OUT = os.path.join(S, "build"); os.makedirs(OUT, exist_ok=True)
 W, H, FPS = 1080, 1920, 30
 BOLD = "/usr/share/fonts/truetype/google-fonts/Poppins-Bold.ttf"
@@ -18,12 +18,11 @@ VOICE = sys.argv[3] if len(sys.argv) > 3 else VOICE
 COLS = {"gold": GOLD, "red": RED, "green": GREEN}
 for s_ in SEG: s_["col"] = COLS.get(s_.get("col", "gold"), GOLD)
 
+sys.path.insert(0, S)
+import voice_tts
+
 def tts(text, path):
-    subprocess.run([sys.executable, "-m", "piper", "-m", VOICE, "-f", path,
-                    "--length_scale", "0.92", "--sentence_silence", "0.15"],
-                   input=text.encode(), check=True, capture_output=True)
-    with wave.open(path) as w:
-        return w.getnframes() / w.getframerate()
+    return voice_tts.tts(text, path, VOICE)
 
 def bg():
     im = Image.new("RGB", (W, H))

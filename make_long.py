@@ -1,7 +1,9 @@
 """Long-form (16:9) video generator for Money Rules in 60s.
 
 Usage:
-  python3 make_long.py script.json output.mp4 /path/to/en-us-lessac-medium.onnx
+  sh setup_voice.sh   (once)
+  python3 make_long.py script.json output.mp4 kokoro:am_michael
+  (a Piper .onnx path still works as the 3rd argument)
 
 script.json:
 {
@@ -40,7 +42,7 @@ COLS = {"gold": GOLD, "red": RED, "green": GREEN}
 
 SCRIPT = json.load(open(sys.argv[1]))
 FINAL = sys.argv[2]
-VOICE = sys.argv[3]
+VOICE = sys.argv[3] if len(sys.argv) > 3 else "kokoro:am_michael"  # or a Piper .onnx path
 OUT = os.path.join(os.path.dirname(os.path.abspath(FINAL)) or ".", "build_long")
 os.makedirs(OUT, exist_ok=True)
 
@@ -217,12 +219,13 @@ def thumbnail():
     return im
 
 
+sys.path.insert(0, HERE)
+import voice_tts
+
+
 def tts(text, path):
-    subprocess.run([sys.executable, "-m", "piper", "-m", VOICE, "-f", path,
-                    "--length_scale", "0.97", "--sentence_silence", "0.25"],
-                   input=text.encode(), check=True, capture_output=True)
-    with wave.open(path) as w:
-        return w.getnframes() / w.getframerate()
+    return voice_tts.tts(text, path, VOICE, speed=1.0,
+                         piper_args=("--length_scale", "0.97", "--sentence_silence", "0.25"))
 
 
 def clip(png, wav, dur, out):
