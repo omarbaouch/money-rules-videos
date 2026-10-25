@@ -1,7 +1,7 @@
 """Text-to-speech for make_short.py and make_long.py.
 
 Voice argument:
-  kokoro:<voice>   -> Kokoro TTS (natural voice), e.g. kokoro:am_michael
+  kokoro:<voice>   -> Kokoro TTS (natural voice), e.g. kokoro:af_heart
   /path/model.onnx -> Piper (old robotic voice, fallback)
 
 Kokoro model files go in <repo>/voice/ (run setup_voice.sh first).
@@ -9,7 +9,7 @@ Kokoro model files go in <repo>/voice/ (run setup_voice.sh first).
 import os, subprocess, sys, wave
 
 S = os.path.dirname(os.path.abspath(__file__))
-DEFAULT_VOICE = "kokoro:am_michael"
+DEFAULT_VOICE = "kokoro:af_heart"
 KOKORO_SPEED = float(os.environ.get("KOKORO_SPEED", "1.1"))
 _kokoro = None
 

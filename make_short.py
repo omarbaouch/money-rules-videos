@@ -2,7 +2,7 @@ import json, subprocess, wave, os, sys, math
 from PIL import Image, ImageDraw, ImageFont
 
 S = os.path.dirname(os.path.abspath(__file__))
-VOICE = "kokoro:am_michael"  # or a Piper .onnx path; see voice_tts.py
+VOICE = "kokoro:af_heart"  # or a Piper .onnx path; see voice_tts.py
 OUT = os.path.join(S, "build"); os.makedirs(OUT, exist_ok=True)
 W, H, FPS = 1080, 1920, 30
 BOLD = "/usr/share/fonts/truetype/google-fonts/Poppins-Bold.ttf"

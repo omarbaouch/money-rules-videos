@@ -2,7 +2,7 @@
 
 Usage:
   sh setup_voice.sh   (once)
-  python3 make_long.py script.json output.mp4 kokoro:am_michael
+  python3 make_long.py script.json output.mp4 kokoro:af_heart
   (a Piper .onnx path still works as the 3rd argument)
 
 script.json:
@@ -42,7 +42,7 @@ COLS = {"gold": GOLD, "red": RED, "green": GREEN}
 
 SCRIPT = json.load(open(sys.argv[1]))
 FINAL = sys.argv[2]
-VOICE = sys.argv[3] if len(sys.argv) > 3 else "kokoro:am_michael"  # or a Piper .onnx path
+VOICE = sys.argv[3] if len(sys.argv) > 3 else "kokoro:af_heart"  # or a Piper .onnx path
 OUT = os.path.join(os.path.dirname(os.path.abspath(FINAL)) or ".", "build_long")
 os.makedirs(OUT, exist_ok=True)
 
