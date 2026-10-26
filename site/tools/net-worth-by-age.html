@@ -1,0 +1,25 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Net Worth by Age Calculator (US medians, Federal Reserve 2025)</title><meta name="description" content="Compare your net worth with the median US family for your age group, using Federal Reserve Survey of Consumer Finances 2025 data."><link rel="canonical" href="https://the-digital-shelf.vercel.app/tools/net-worth-by-age">
+<meta property="og:type" content="website"><meta property="og:title" content="Net Worth by Age Calculator (US medians, Federal Reserve 2025)"><meta property="og:description" content="Compare your net worth with the median US family for your age group, using Federal Reserve Survey of Consumer Finances 2025 data."><meta property="og:url" content="https://the-digital-shelf.vercel.app/tools/net-worth-by-age"><meta property="og:image" content="https://the-digital-shelf.vercel.app/img/og-square.jpg">
+<meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#0f203a">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/style.css"><script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};</script><script defer src="/_vercel/insights/script.js"></script></head><body>
+<header class="site"><div class="wrap"><a class="logo" href="/">The Digital <span>Shelf</span></a>
+<nav><a href="/#finance">Finance</a><a href="/#printables">Printables</a><a href="/#engineering">Engineering</a><a href="/tools">Free tools</a></nav></div></header>
+<div class="wrap"><div class="crumbs"><a href="/">Home</a> › <a href="/tools">Free tools</a></div><h1>Net worth by age: are you ahead?</h1><p class="sub">Enter your age and net worth (what you own minus what you owe). We compare it with the median US family in your age group.</p>
+<div class="calc"><div class="fields"><div><label for="age">Your age</label><input id="age" type="number" min="18" max="100" value="32"></div>
+<div><label for="nw">Your net worth ($)</label><input id="nw" type="number" step="1000" value="25000"></div></div>
+<div class="result" id="out"></div>
+<table class="t"><tr><th>Age of head of family</th><th>Median net worth (2025)</th></tr>
+<tr><td>Under 35</td><td>$33,000</td></tr><tr><td>35-44</td><td>$155,600</td></tr><tr><td>45-54</td><td>$253,700</td></tr><tr><td>55-64</td><td>$411,900</td></tr><tr><td>65-74</td><td>$431,300</td></tr><tr><td>75 or older</td><td>$504,900</td></tr></table>
+<p class="small">Source: Board of Governors of the Federal Reserve System, "Changes in U.S. Family Finances from 2022 to 2025: Evidence from the Survey of Consumer Finances", Table 2 (median family net worth by age of head of family). Median = half of families have more, half have less.</p>
+<div class="upsell"><img src="/img/moneybyage-laptop.jpg" alt="Money by Age Toolkit" loading="lazy"><div><b>Go further with the Money by Age Toolkit</b><br>
+<span class="small">Budget, net worth vs. your age group, debt payoff and compound growth in one spreadsheet.</span><br><a class="btn sm" style="margin-top:8px" href="/products/money-by-age-toolkit">See it · $9+</a></div></div></div></div><script>const M=[[35,33000,'under 35'],[45,155600,'35-44'],[55,253700,'45-54'],[65,411900,'55-64'],[75,431300,'65-74'],[999,504900,'75 or older']];
+function fmt(x){return (x<0?'-$':'$')+Math.abs(Math.round(x)).toLocaleString('en-US')}
+function nwCalc(age,nw){const b=M.find(m=>age<m[0]);return {median:b[1],group:b[2],ratio:nw/b[1]}}
+function run(){const a=+age.value,n=+nw.value;if(!a){out.innerHTML='<p>Enter your age.</p>';return}const r=nwCalc(a,n);
+out.innerHTML=`<p>Median for families aged ${r.group}</p><div class="big">${fmt(r.median)}</div><p>Your net worth is <b>${Math.round(r.ratio*100)}%</b> of the median: ${r.ratio>=1?'you are above the typical family in your age group.':'you are below the median for now. A budget and a debt plan are the fastest way to close the gap.'}</p>`}
+age.oninput=nw.oninput=run;run();</script>
+<footer><div class="wrap"><p><b>The Digital Shelf</b> · Practical digital downloads: spreadsheets, calculators and printables. Secure checkout and instant delivery by Gumroad.</p>
+<p>Educational tools only, not financial, tax or engineering advice. Some product visuals and texts were made with the help of AI tools and checked by hand.</p>
+<p>Photos: <a href="https://unsplash.com/@mailchimp">Mailchimp</a>, <a href="https://unsplash.com/@anniespratt">Annie Spratt</a> and <a href="https://unsplash.com/@spencerdavis">Spencer Davis</a> on <a href="https://unsplash.com/license">Unsplash</a> (product screens added).</p>
+<p><a href="https://mydigitalshelf.gumroad.com">All products on Gumroad</a> · <a href="/tools">Free calculators</a></p></div></footer></body></html>

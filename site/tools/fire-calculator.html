@@ -1,0 +1,26 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FIRE Calculator: how much do you need to retire early?</title><meta name="description" content="Free FIRE calculator: your FIRE number (4% rule), years until financial independence and the age you get there."><link rel="canonical" href="https://the-digital-shelf.vercel.app/tools/fire-calculator">
+<meta property="og:type" content="website"><meta property="og:title" content="FIRE Calculator: how much do you need to retire early?"><meta property="og:description" content="Free FIRE calculator: your FIRE number (4% rule), years until financial independence and the age you get there."><meta property="og:url" content="https://the-digital-shelf.vercel.app/tools/fire-calculator"><meta property="og:image" content="https://the-digital-shelf.vercel.app/img/og-square.jpg">
+<meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#0f203a">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/style.css"><script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};</script><script defer src="/_vercel/insights/script.js"></script></head><body>
+<header class="site"><div class="wrap"><a class="logo" href="/">The Digital <span>Shelf</span></a>
+<nav><a href="/#finance">Finance</a><a href="/#printables">Printables</a><a href="/#engineering">Engineering</a><a href="/tools">Free tools</a></nav></div></header>
+<div class="wrap"><div class="crumbs"><a href="/">Home</a> › <a href="/tools">Free tools</a></div><h1>FIRE calculator</h1><p class="sub">Your FIRE number is your yearly spending divided by a safe withdrawal rate (4% = 25× spending). All amounts in today's dollars.</p>
+<div class="calc"><div class="fields"><div><label for="age">Current age</label><input id="age" type="number" value="30"></div>
+<div><label for="assets">Invested today ($)</label><input id="assets" type="number" step="1000" value="40000"></div>
+<div><label for="save">Invested per year ($)</label><input id="save" type="number" step="1000" value="20000"></div>
+<div><label for="spend">Yearly spending in retirement ($)</label><input id="spend" type="number" step="1000" value="40000"></div>
+<div><label for="ret">Real return per year (%)</label><input id="ret" type="number" step="0.5" value="5"></div>
+<div><label for="swr">Withdrawal rate (%)</label><input id="swr" type="number" step="0.25" value="4"></div></div>
+<div class="result" id="out"></div><p class="small">Assumes a constant real (after-inflation) return and contributions at the end of each year. The ~4% rule comes from Bengen (1994) and the Trinity study (1998) on 30-year retirements. Educational only, not financial advice.</p>
+<div class="upsell"><img src="/img/fire-laptop.jpg" alt="FIRE Number Calculator" loading="lazy"><div><b>Go further with the FIRE Number Calculator</b><br>
+<span class="small">Your FIRE number, years to financial independence and Coast FIRE in 3 minutes.</span><br><a class="btn sm" style="margin-top:8px" href="/products/fire-number-calculator">See it · $7</a></div></div></div></div><script>function fmt(x){return '$'+Math.round(x).toLocaleString('en-US')}
+function fireCalc(A,S,E,r,w){const T=E/w;if(A>=T)return {T,years:0};if(S<=0&&r<=0)return {T,years:null};
+if(r===0)return {T,years:(T-A)/S};if(S<=0&&A<=0)return {T,years:null};const y=Math.log((T*r+S)/(A*r+S))/Math.log(1+r);return {T,years:isFinite(y)?y:null}}
+function run(){const r=fireCalc(+assets.value,+save.value,+spend.value,+ret.value/100,+swr.value/100);
+out.innerHTML=`<p>Your FIRE number</p><div class="big">${fmt(r.T)}</div>`+(r.years===null?'<p>Not reachable with these inputs: invest something each year.</p>':`<p>Financially independent in <b>${r.years.toFixed(1)} years</b>, at about age <b>${(+age.value+r.years).toFixed(1)}</b>.</p>`)}
+document.querySelectorAll('input').forEach(i=>i.oninput=run);run();</script>
+<footer><div class="wrap"><p><b>The Digital Shelf</b> · Practical digital downloads: spreadsheets, calculators and printables. Secure checkout and instant delivery by Gumroad.</p>
+<p>Educational tools only, not financial, tax or engineering advice. Some product visuals and texts were made with the help of AI tools and checked by hand.</p>
+<p>Photos: <a href="https://unsplash.com/@mailchimp">Mailchimp</a>, <a href="https://unsplash.com/@anniespratt">Annie Spratt</a> and <a href="https://unsplash.com/@spencerdavis">Spencer Davis</a> on <a href="https://unsplash.com/license">Unsplash</a> (product screens added).</p>
+<p><a href="https://mydigitalshelf.gumroad.com">All products on Gumroad</a> · <a href="/tools">Free calculators</a></p></div></footer></body></html>

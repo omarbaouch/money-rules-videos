@@ -1,0 +1,25 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Debt Payoff Calculator: months to debt-free and interest saved</title><meta name="description" content="Free debt payoff calculator: how long to pay off a credit card or loan, total interest, and what an extra monthly payment saves."><link rel="canonical" href="https://the-digital-shelf.vercel.app/tools/debt-payoff-calculator">
+<meta property="og:type" content="website"><meta property="og:title" content="Debt Payoff Calculator: months to debt-free and interest saved"><meta property="og:description" content="Free debt payoff calculator: how long to pay off a credit card or loan, total interest, and what an extra monthly payment saves."><meta property="og:url" content="https://the-digital-shelf.vercel.app/tools/debt-payoff-calculator"><meta property="og:image" content="https://the-digital-shelf.vercel.app/img/og-square.jpg">
+<meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#0f203a">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/style.css"><script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};</script><script defer src="/_vercel/insights/script.js"></script></head><body>
+<header class="site"><div class="wrap"><a class="logo" href="/">The Digital <span>Shelf</span></a>
+<nav><a href="/#finance">Finance</a><a href="/#printables">Printables</a><a href="/#engineering">Engineering</a><a href="/tools">Free tools</a></nav></div></header>
+<div class="wrap"><div class="crumbs"><a href="/">Home</a> › <a href="/tools">Free tools</a></div><h1>Debt payoff calculator</h1><p class="sub">How long until this debt is gone, and what an extra payment saves you.</p>
+<div class="calc"><div class="fields"><div><label for="bal">Balance ($)</label><input id="bal" type="number" step="100" value="6000"></div>
+<div><label for="apr">Interest rate (APR %)</label><input id="apr" type="number" step="0.1" value="22"></div>
+<div><label for="pay">Monthly payment ($)</label><input id="pay" type="number" step="10" value="200"></div>
+<div><label for="extra">Extra per month ($)</label><input id="extra" type="number" step="10" value="100"></div></div>
+<div class="result" id="out"></div><p class="small">Interest charged monthly at APR ÷ 12; fixed payment, no new charges. Educational only.</p>
+<div class="upsell"><img src="/img/moneybyage-laptop.jpg" alt="Money by Age Toolkit" loading="lazy"><div><b>Go further with the Money by Age Toolkit</b><br>
+<span class="small">Budget, net worth vs. your age group, debt payoff and compound growth in one spreadsheet.</span><br><a class="btn sm" style="margin-top:8px" href="/products/money-by-age-toolkit">See it · $9+</a></div></div></div></div><script>function fmt(x){return '$'+Math.round(x).toLocaleString('en-US')}
+function payoff(B,apr,P){const i=apr/12;let b=B,m=0,int=0;if(P<=b*i)return null;while(b>0.005&&m<1200){const c=b*i;int+=c;b=b+c-P;m++;if(b<0)b=0}return {months:m,interest:int}}
+function yrs(m){const y=Math.floor(m/12),r=m%12;return (y?y+' yr ':'')+r+' mo'}
+function run(){const B=+bal.value,a=+apr.value/100,P=+pay.value,X=+extra.value;const r1=payoff(B,a,P),r2=payoff(B,a,P+X);
+if(!r1){out.innerHTML=`<p>Your payment does not cover the monthly interest (${fmt(B*a/12)}). The debt will never be paid off: increase the payment.</p>`;return}
+out.innerHTML=`<p>Debt-free in</p><div class="big">${yrs(r1.months)}</div><p>Total interest: <b>${fmt(r1.interest)}</b></p>`+(X>0&&r2?`<p>With ${fmt(X)} extra per month: <b>${yrs(r2.months)}</b>, interest <b>${fmt(r2.interest)}</b>. You save <b>${fmt(r1.interest-r2.interest)}</b> and <b>${r1.months-r2.months} months</b>.</p>`:'')}
+document.querySelectorAll('input').forEach(i=>i.oninput=run);run();</script>
+<footer><div class="wrap"><p><b>The Digital Shelf</b> · Practical digital downloads: spreadsheets, calculators and printables. Secure checkout and instant delivery by Gumroad.</p>
+<p>Educational tools only, not financial, tax or engineering advice. Some product visuals and texts were made with the help of AI tools and checked by hand.</p>
+<p>Photos: <a href="https://unsplash.com/@mailchimp">Mailchimp</a>, <a href="https://unsplash.com/@anniespratt">Annie Spratt</a> and <a href="https://unsplash.com/@spencerdavis">Spencer Davis</a> on <a href="https://unsplash.com/license">Unsplash</a> (product screens added).</p>
+<p><a href="https://mydigitalshelf.gumroad.com">All products on Gumroad</a> · <a href="/tools">Free calculators</a></p></div></footer></body></html>
