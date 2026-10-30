@@ -8,3 +8,4 @@ Money Rules in 60s — topics already published (date | topic | title)
 2026-10-25 | 4% rule: $40K/yr needs $1M (x25); $820/mo for 30y at 7% ($295K deposited + $705K growth); $1,920/mo for 20y; $381/mo for 40y | You Need $1M to Spend $40K a Year #shorts
 2026-10-26 | Net worth by age (Fed SCF 2025 medians: <35 $33K, 35-44 $156K, 45-54 $254K, 55-64 $412K, 65-74 $431K, 75+ $505K; <35 -23% vs 2022) | Net Worth by Age. Where Do You Fall? #shorts
 2026-10-27 | Prices 1990 vs 2026 (BLS avg retail: eggs $1.01→$2.27, bread $0.70→$1.83, gas $1.16→$4.48, beef $1.59→$6.79; beef 4.3x) | Grocery Prices 1990 vs 2026. Can You Believe It? #shorts
+2026-10-30 | Renting myth: $400K home, 20% down, 6.5% 30y = $2,023/mo P&I; year-1 interest 85% (calc.py) | Renting Is Throwing Money Away? Do the Math #shorts
