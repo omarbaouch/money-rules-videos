@@ -10,3 +10,5 @@ Money Rules in 60s — topics already published (date | topic | title)
 2026-10-27 | Prices 1990 vs 2026 (BLS avg retail: eggs $1.01→$2.27, bread $0.70→$1.83, gas $1.16→$4.48, beef $1.59→$6.79; beef 4.3x) | Grocery Prices 1990 vs 2026. Can You Believe It? #shorts
 2026-10-30 | Renting myth: $400K home, 20% down, 6.5% 30y = $2,023/mo P&I; year-1 interest 85% (calc.py) | Renting Is Throwing Money Away? Do the Math #shorts
 2026-10-31 | Myth: need big salary to be a millionaire — $500/mo, 40y, 7% = ~$1.31M ($240K deposited, ~$1.07M growth; calc.py) | Think You Need a Big Salary to Be a Millionaire? #shorts
+2026-11-01 | Median salary by age (BLS) — Short #13 (was not logged) | Median Salary by Age (BLS)
+2026-11-06 | Format 2: new home median price Q1 1990 $123,900 vs Q3 2026 $393,300 (3.2x, Census/HUD MSPUS); public 4-yr college year $5,243 (1990-91) vs $23,176 (2023-24) (4.4x, NCES Table 330.10) | Home & College Prices 1990 vs 2026. Can You Believe It? #shorts
