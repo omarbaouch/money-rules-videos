@@ -14,3 +14,4 @@ Money Rules in 60s — topics already published (date | topic | title)
 2026-11-06 | Format 2: new home median price Q1 1990 $123,900 vs Q3 2026 $393,300 (3.2x, Census/HUD MSPUS); public 4-yr college year $5,243 (1990-91) vs $23,176 (2023-24) (4.4x, NCES Table 330.10) | Home & College Prices 1990 vs 2026. Can You Believe It? #shorts
 2026-11-07 | Format 3: highest paying jobs with no degree (BLS May 2025) — Short #15 (was not logged) | 7 Highest Paying Jobs With No Degree
 2026-11-08 | Myth: extra $200/mo on $300K 6.5% 30y mortgage = $383K→$279K interest ($103K saved), 6.9 yrs early, $55K extra paid (calc.py) | Is an Extra $200 a Month on Your Mortgage Pointless? #shorts
+2026-11-09 | Myth (rule #17): 401k match 4% of $60K = $2,400/yr, 30y $200/mo at 7% = ~$244K ($72K deposited; calc.py) — video made, Metricool scheduling FAILED (403) | 401k Match Is Small Change? Do the Math #shorts
